@@ -1,0 +1,24 @@
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+
+app.post('/bfhl', (req, res) => {
+    // Extract data from req.body and generate user ID
+    // Process the data and set is_success
+    const response = {
+        user_id: 'john_doe_17091999',
+        is_success: true,
+        // Other data fields
+    };
+    res.json(response);
+});
+
+app.get('/bfhl', (req, res) => {
+    res.json({ operation_code: 1 });
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
